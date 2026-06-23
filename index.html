@@ -12,11 +12,15 @@
             margin: 0;
             padding: 0;
         }
+/* هذا الكود يعمل فقط على الموبايل (الأجهزة التي عرض شاشتها صغير) */
+@media screen and (max-width: 600px) {
+    body {
+        padding-top: 30px !important;
+        
+    }
+    
+} 
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f4f8;
-        }
 
         /* توزيع الصفحة الرئيسي */
         .app-layout {
@@ -517,5 +521,6 @@ document.querySelectorAll('input[type="text"]').forEach(input => {
     });
 });
 </script>
+
 </body>
 </html>
