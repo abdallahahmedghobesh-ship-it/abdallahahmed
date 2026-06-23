@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AeroGuide ✈️</title>
-    <link rel="manifest" href="manifest.json">
+    
     <style>
         /* --- 1. تصميم الألوان والخطوط (CSS) --- */
         * {
@@ -12,16 +12,11 @@
             margin: 0;
             padding: 0;
         }
-        
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f4f8;
    
 }
-
-    
-
-
         /* توزيع الصفحة الرئيسي */
         .app-layout {
             display: flex;
@@ -478,49 +473,3 @@ body {
                         if (targetId && document.getElementById(targetId)) {
                             document.getElementById(targetId).classList.add("active");
                         }
-                        
-                        // قفل المنيو تلقائياً بعد الاختيار لو شغال على موبايل
-                        document.getElementById("sidebar").classList.remove("open");
-                    }
-                });
-            });
-
-            // نظام الفلترة والبحث الفوري
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('input', function() {
-                    let filter = this.value.toLowerCase();
-                    let cards = document.querySelectorAll('#aviation-section .pdf-card');
-                    
-                    cards.forEach(card => {
-                        let title = card.querySelector('h3').innerText.toLowerCase();
-                        if (title.includes(filter)) {
-                            card.style.display = "";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                });
-            }
-        });
-    </script>
-<script>
-// ده الكود اللي بيخلي البحث يشتغل على أي input عندك في الصفحة
-document.querySelectorAll('input[type="text"]').forEach(input => {
-    input.addEventListener('input', function() {
-        let filter = this.value.toLowerCase();
-        
-        // بنجيب كل الـ cards اللي في الصفحة
-        let allCards = document.querySelectorAll('.pdf-card');
-
-        allCards.forEach(card => {
-            let text = card.textContent.toLowerCase();
-            // لو النص موجود بيظهر الكارت، لو مش موجود بيختفي
-            card.style.display = text.includes(filter) ? "" : "none";
-        });
-    });
-});
-</script>
-
-</body>
-</html>
